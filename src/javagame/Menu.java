@@ -17,7 +17,9 @@ public class Menu extends BasicGameState{
 
 	@Override
 	public void render(GameContainer gc, StateBasedGame sbg, Graphics g) throws SlickException {
-		
+		g.drawString("Are you ready for blast some ham?", 50, 50);
+		g.drawRect(50, 100, 60, 120);
+		g.drawOval(200, 130, 130, 80);
 		
 	}
 
