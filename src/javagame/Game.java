@@ -15,8 +15,22 @@ public class Game extends StateBasedGame{
 	}
 
 	public static void main(String[] args) {
-		
+		AppGameContainer appgc;
+		try{
+			appgc = new AppGameContainer(new Game(gamename));
+			appgc.setDisplayMode(640, 360, false);
+			appgc.start();
+		}catch(SlickException e){
+			e.printStackTrace();
+		}
 
+	}
+
+	@Override
+	public void initStatesList(GameContainer gc) throws SlickException {
+		this.getState(menu).init(gc, this);
+		this.getState(play).init(gc, this);
+		this.enterState(menu);
 	}
 
 }
